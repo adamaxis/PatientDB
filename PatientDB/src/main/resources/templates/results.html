@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Patients</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentPatient : ${patients}" >
+ <td th:text="${currentPatient.id}" />
+    <td th:text="${currentPatient.name}" />
+    <td th:text="${currentPatient.phone}" />
+    <td th:text="${currentPatient.email}" />
+    <td th:text="${currentPatient.primaryDoctor}" />
+   <td><a th:href="@{/edit/{id}(id=${currentPatient.id})}">Edit</a></td>
+    <td><a th:href="@{/delete/{id}(id=${currentPatient.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputPatient">Add a new patient</a>
+</body>
+</html>

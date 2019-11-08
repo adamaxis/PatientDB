@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Patient</title>
+</head>
+<body>
+ <form th:object="${newPatient}" th:action="@{/inputPatient}" method='POST'>
+ 
+ Name: <input name="name" size="20"> <br />
+ Phone: <input name="phone" size="10"><br />
+ Email: <input name="email" size="20"><br />
+ Primary Doctor: <input name="primaryDoctor" size="20"><br />
+ <input name="submit" type="submit" value="submit" />
+         
+</form>
+<a href="viewAll">View all Patients</a>
+</body>
+</html>
